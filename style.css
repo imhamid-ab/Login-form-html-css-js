@@ -1,0 +1,260 @@
+/* ----------------------------- */
+/*        Reset & Global        */
+/* ----------------------------- */
+@font-face {
+  font-family: Yekan Bakh;
+  src: url("Font/YekanBakhFaNum-VF.woff2") format("woff2");
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Yekan Bakh, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --primary: #4f46e5;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --background: #f9fafb;
+  --text: #111827;
+  --gray: #6b7280;
+  --radius: 0.75rem;
+  --transition: 0.3s ease;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------------------------- */
+/*            Layout            */
+/* ----------------------------- */
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main.form {
+  justify-content: flex-start;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  width: 30rem;
+  height: auto;
+  padding: 2rem;
+}
+
+/* ----------------------------- */
+/*           Headings           */
+/* ----------------------------- */
+.header-form h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ----------------------------- */
+/*         Form Sections        */
+/* ----------------------------- */
+.section-form {
+  width: 100%;
+  margin-top: 20px;
+  gap: 2rem;
+}
+
+/* ----------------------------- */
+/*         Input Groups         */
+/* ----------------------------- */
+.name-input,
+.email-input,
+.pass-input {
+  position: relative;
+}
+
+input {
+  width: 24rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-size: 1.3rem;
+  background: transparent;
+  transition: border var(--transition);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+label {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: var(--gray);
+  pointer-events: none;
+  transition: transform var(--transition), font-size var(--transition);
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  transform: translate(0.7rem, -1.5rem);
+  font-size: 0.8rem;
+  color: var(--primary);
+  background: #fff;
+  padding: 0 0.25rem;
+}
+
+/* ----------------------------- */
+/*        Error Messages        */
+/* ----------------------------- */
+.error-name,
+.error-email {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin: 0.25rem 0.3rem 0 0;
+}
+.error {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin: 0.25rem 0.3rem 0 0;
+}
+
+/* ----------------------------- */
+/*       Toggle Password        */
+/* ----------------------------- */
+.password-toggle {
+  position: absolute;
+  left: 1.2rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.password-toggle img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ----------------------------- */
+/*        Submit Button         */
+/* ----------------------------- */
+.submit-btn {
+  background: var(--primary);
+  width: 20rem;
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.submit-btn:hover {
+  background: #4338ca;
+}
+
+/* ----------------------------- */
+/*           Divider            */
+/* ----------------------------- */
+#or {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  position: relative;
+  margin: 1rem 0;
+}
+#or::before,
+#or::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 6rem;
+  height: 1px;
+  background-color: #ccc;
+}
+#or::before {
+  right: 15px;
+}
+
+#or::after {
+  left: 15px;
+}
+
+/* ----------------------------- */
+/*        Social Buttons        */
+/* ----------------------------- */
+.footer-form {
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.social {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 0;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+  transition: background var(--transition);
+  width: 24rem;
+  font-size: 1.2rem;
+}
+
+.social img {
+  width: 17px;
+  height: 17px;
+  margin-right: 0.5rem;
+}
+
+.social:hover {
+  background: #f3f4f6;
+}
+
+/* ----------------------------- */
+/*             Modal            */
+/* ----------------------------- */
+.modal {
+  position: absolute;
+  top: 2rem;
+  color: #fff;
+  padding: 1rem 2rem;
+  width: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  visibility: hidden;
+  z-index: 1000;
+  display: flex;
+}
+
+.modal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+}

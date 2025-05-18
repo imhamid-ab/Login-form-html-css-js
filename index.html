@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="فرم ثبت‌نام حرفه‌ای با اعتبارسنجی سمت کلاینت مناسب برای نمونه‌کار"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>فرم ثبت‌نام | Portfolio</title>
+  </head>
+  <body class="flex">
+    <!-- Modal Notification -->
+    <div class="modal flex" role="alert" aria-live="assertive">
+      <h2 class="modal-title"></h2>
+    </div>
+
+    <!-- Form Container -->
+    <main class="form flex" aria-labelledby="formTitle">
+      <header class="header-form flex">
+        <h1 id="formTitle">فرم ثبت‌نام</h1>
+      </header>
+
+      <section class="section-form flex" novalidate autocomplete="off">
+        <!-- Full Name -->
+        <div class="name-input">
+          <input
+            type="text"
+            id="name"
+            placeholder=" "
+            aria-describedby="nameError"
+            required
+            minlength="3"
+          />
+          <label for="name" class="place-name">نام و نام خانوادگی</label>
+          <p class="error-name" id="nameError">حداقل ۳ کاراکتر وارد کنید</p>
+        </div>
+
+        <!-- Email -->
+        <div class="email-input">
+          <input
+            type="email"
+            id="email"
+            placeholder=" "
+            aria-describedby="emailError"
+            required
+          />
+          <label for="email" class="place-email">ایمیل</label>
+          <p class="error-email" id="emailError">ایمیل باید معتبر باشد</p>
+        </div>
+
+        <!-- Password -->
+        <div class="pass-input">
+          <input
+            type="password"
+            id="password"
+            placeholder=" "
+            aria-describedby="passError"
+            autocomplete="new-password"
+            required
+          />
+          <label for="password" class="place-pass">رمز عبور</label>
+          <p class="error error-pass">حداقل ۸ کاراکتر باشد</p>
+          <p class="error error-upper">شامل حروف بزرگ باشد</p>
+          <p class="error error-small">شامل حروف کوچک باشد</p>
+          <p class="error error-number">شامل عدد باشد</p>
+          <p class="error error-symbol">شامل نماد باشد</p>
+          <button
+            type="button"
+            class="password-toggle"
+            aria-label="نمایش یا مخفی‌سازی رمز"
+          >
+            <img src="/Img/off.svg" class="on-off" alt="toggle visibility" />
+          </button>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="submit-btn">ثبت‌نام</button>
+      </section>
+
+      <p id="or">یا</p>
+
+      <!-- Social Logins -->
+      <footer class="footer-form flex" aria-label="ورود با حساب‌های اجتماعی">
+        <button class="social flex google" aria-label="ورود با حساب گوگل">
+          <img src="/Img/google.svg" alt="Google icon" />
+          <p class="social_text">گوگل</p>
+        </button>
+        <button class="social flex apple" aria-label="ورود با حساب اپل">
+          <img src="/Img/apple.svg" alt="Apple icon" />
+          <p class="social_text">اپل</p>
+        </button>
+        <button class="social flex facebook" aria-label="ورود با حساب فیسبوک">
+          <img src="/Img/facebook.svg" alt="Facebook icon" />
+          <p class="social_text">فیسبوک</p>
+        </button>
+      </footer>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
