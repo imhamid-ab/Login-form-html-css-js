@@ -15,7 +15,7 @@ let getModalTitle = document.querySelector(".modal-title");
 
 // اعتبارسنجی نام
 const validName = () => {
-  if (getName.value.length <= 3) {
+  if (getName.value.length < 3) {
     errorName.style.color = "red";
     errorName.innerHTML = "حداقل 3 کاراکتر باشد";
   } else {
